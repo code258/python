@@ -1,58 +1,28 @@
-from login_info import login_check
-from game_info import make_map, print_map, check_win
+def push(stack, data, max_length):
+    if len(stack) < max_length:
+        stack.append(data)
+    else:
+        print("over flow")
 
-i = 0
-j = 0
-while i != 5:
-    input_id = input("Enter the id : ")
-    input_pwd = input("Enter the pwd : ")
+    return stack
 
-    flag = login_check(input_id, input_pwd)
+def pop(stack):
+    if len(stack) > 0:
+        del(stack[4 - choice_pop])
+    else:
+        print("under flow")
 
-    if flag:
-        break
+max_length = 3
+stack = []
+choice_pop = 0
+while True:
 
-    if not flag:
-        print("Login Fail")
+    que = input("Enter push or pop : ")
 
-if flag:
-    print("succes")
-    a = '0'
-    b = 'X'
-    turn = 0
+    if que == "push":
+        data = int(input("Enter the number : "))
+        stack = push(stack, data, max_length)
 
-    nk_map = make_map()
-
-    print_map(nk_map)
-    for i in range(9):
-        if turn == 0:
-            while True:
-                num = int(input("Enter the position : "))
-                if nk_map[num] == " ":
-                    nk_map[num] = a
-                    print_map(nk_map)
-                    break
-            turn = 1
-
-        else:
-            while True:
-                num1 = int(input("Enter the position : "))
-                if nk_map[num1] == " ":
-                    nk_map[num1] = b
-                    print_map(nk_map)
-                    break
-            turn = 0
-
-        print_map(nk_map)
-        nk_map_check = check_win(nk_map)
-
-        if nk_map_check:
-            break
-
-    if nk_map_check and turn == 0:
-        print("X win")
-    elif nk_map_check and turn == 1:
-        print("O win")
-
-    if nk_map_check == False:
-        print("draw")
+    elif que == "pop":
+        stack = pop(stack)
+        choice_pop += 1
