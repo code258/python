@@ -1,0 +1,33 @@
+def inque(stack, data, max_length):
+    if len(stack) < max_length:
+        stack.append(data)
+    else:
+        print("over flow")
+
+    return stack
+
+def deque(stack):
+    if len(stack) > 1:
+        del stack[]
+    elif len(stack) == 1:
+        del stack[0]
+    else:
+        print("under flow")
+
+    return stack
+
+max_length = 3
+stack = []
+choice_pop = 0
+while True:
+
+    que = input("Enter inque or deque : ")
+
+    if que == "inque":
+        data = int(input("Enter the number : "))
+        stack = inque(stack, data, max_length)
+        print(stack)
+
+    elif que == "deque":
+        stack = deque(stack)
+        print(stack)
