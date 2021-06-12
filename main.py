@@ -1,79 +1,69 @@
 '''
-import random
+a = int(input())
+b = 0
+c = []
+for i in range(1, a):
+    if a % i == 0:
+        b += 1
 
-a = []
-
-for k in range(0, 10):
-    b = random.randrange(10)
-    a.append(b)
-
-print(a)
-
-for i in range(10):
-    for i in range(0, 9):
-        if a[i] > a[i + 1]:
-            a[i], a[i + 1] = a[i + 1], a[i]
-
-print(a)
+if b == 1:
+    print("True")
+elif a == 1:
+        print("1")
+else:
+    print("False")
 '''
 
 '''
-import random
-def make_list():
-    a = []
-    for k in range(0, 10):
-        b = random.randrange(10)
-        a.append(b)
-    return a
+c = []
+b = 0
 
-a = make_list()
-print(a)
+for a in range (0, 100):
 
-def change_list():
-    for i in range(10):
-        for i in range(0, 9):
-            if a[i] > a[i + 1]:
-                a[i], a[i + 1] = a[i + 1], a[i]
+    for i in range(1, a):
+        if a % i == 0:
+            b += 1
 
-    return a
+    if b == 1:
+        c.append(a)
+        b = 0
 
-a = change_list()
-print(a)
-'''
-import random
+    else:
+        b = 0
 
-a = []
-
-for k in range(0, 10):
-    b = random.randrange(10)
-    a.append(b)
-
-print(a)
-c = 0
-
-for j in range(len(a)):
-    if c > a[j]:
-        c = a[j]
 print(c)
-
-
-'''
-for l in range(0, 10):
-    for j in range(0, 10):
-        if a[j] == c:
-            print(a[j])
-            break
-        if a[j] != c and j == 9:
-            c += 1
 '''
 
 '''
-1. 함수화를 먼저 시키고
-2. select sort
+def prime_number(a):
+    b = 0
+    for i in range(1, a):
+        if a % i == 0:
+            b += 1
+    if b == 1:
+        return b
 
-4,2,1,3,100
+c = []
+for a in range(1, 100):
 
-1,2,4,3,100
+    b = prime_number(a)
+    if b == 1:
+        c.append(a)
 
-1,2,3,4,100
+print(c)
 '''
+
+'''
+a = int(input("Enter the number : "))
+total_num = 100
+num = 0
+while total_num != a:
+    if a < total_num:
+        total_num = int(total_num / 2)
+        print("total_num : {}".format(total_num))
+
+    elif a > total_num:
+        total_num = int(total_num + (total_num / 2))
+        print("total_num : {}".format(total_num))
+'''
+
